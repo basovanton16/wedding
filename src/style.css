@@ -46,3 +46,9 @@ body {
   padding: 20px;
   background: white;
 }
+
+
+img {
+  user-select: none;
+  width: 100%;
+}
