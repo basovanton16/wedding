@@ -2,13 +2,14 @@
   <section class="promo">
     <div class="promo__wrapper">
       <div class="promo__bg">
-        <img src="../assets/images/titleName.png" class="promo__title-name">
+        <img src="../assets/images/titleName.png" class="promo__title-name" />
         <img src="../assets/images/bg.png" class="promo__img" />
       </div>
-      <div class="promo__title">Дорогие друзья и&nbsp;родные!</div>
+      <div class="promo__title">
+        <img src="../assets/images/promo-title.png" class="promo__img" />
+      </div>
       <div class="promo__subtitle">
-        Скоро в&nbsp;нашей жизни состоится важное событие&nbsp;&mdash; наша
-        свадьба!
+        <img src="../assets/images/promo-subtitle.png" class="promo__img" />
       </div>
     </div>
   </section>
@@ -32,6 +33,9 @@ export default {
 }
 
 .promo__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 375px;
 }
 
@@ -43,13 +47,23 @@ export default {
   position: relative;
   width: 100%;
   max-width: 375px;
+  margin-bottom: 32px;
 }
 
 .promo__title-name {
   position: absolute;
-  width: 100%;
-  max-width: 291px;
+  width: 80%;
   top: 24px;
   left: 24px;
+}
+
+.promo__title {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.promo__subtitle {
+  width: 100%;
+max-width: 321px;
 }
 </style>

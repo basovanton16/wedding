@@ -1,16 +1,19 @@
 <template>
   <div id="app" class="app">
     <Promo class="promo" />
+    <Date class="date"/>
   </div>
 </template>
 
 <script>
 import Promo from "./components/promo.vue";
+import Date from './components/date.vue';
 export default {
   name: "App",
 
   components: {
     Promo,
+    Date
   },
 };
 </script>
