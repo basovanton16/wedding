@@ -4,7 +4,7 @@
   "description": "Свадебный лендинг на Vue 3",
   "main": "index.js",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
     "deploy": "npm run build && gh-pages -d dist"
@@ -16,7 +16,11 @@
     "@vitejs/plugin-vue": "^5.0.0",
     "vite": "^5.0.0"
   },
-  "keywords": ["wedding", "landing", "vue3"],
+  "keywords": [
+    "wedding",
+    "landing",
+    "vue3"
+  ],
   "author": "",
   "license": "MIT"
 }
