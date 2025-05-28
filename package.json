@@ -1,0 +1,21 @@
+{
+  "name": "wedding-landing",
+  "version": "1.0.0",
+  "description": "Свадебный лендинг на Vue 3",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.4.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.0",
+    "vite": "^5.0.0"
+  },
+  "keywords": ["wedding", "landing", "vue3"],
+  "author": "",
+  "license": "MIT"
+}
