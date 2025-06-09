@@ -1,13 +1,13 @@
 <template>
   <section class="location">
     <div class="location__wrapper">
-      <div class="location__title">
+      <div class="location__title" ref="titleRef">
         <img src="../assets/images/location-title.png" class="location__img">
       </div>
-      <div class="location__map">
+      <div class="location__map" ref="mapRef">
         <img src="../assets/images/map.png" class="location__img">
       </div>
-      <div class="location__description">
+      <div class="location__description" ref="descriptionRef">
         <img src="../assets/images/location-descr.png" class="location__img">
       </div>
     </div>
@@ -15,8 +15,62 @@
 </template>
 
 <script>
+import { ref, onMounted } from 'vue'
+import { useGSAPAnimations } from '../composables/useGSAPAnimations.js'
+
 export default {
-  name: 'Location'
+  name: 'Location',
+  setup() {
+    const titleRef = ref(null)
+    const mapRef = ref(null)
+    const descriptionRef = ref(null)
+
+    const { animateFromBottom, animateScale, animateFromLeft, animateFromRight } = useGSAPAnimations()
+
+    onMounted(() => {
+      // Анимация заголовка снизу
+      animateFromBottom(titleRef.value, {
+        duration: 1,
+        y: 40,
+        scrollTrigger: {
+          trigger: titleRef.value,
+          start: "top 85%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        }
+      })
+
+      // Анимация карты с масштабированием
+      animateScale(mapRef.value, {
+        duration: 1.2,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: mapRef.value,
+          start: "top 85%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        }
+      })
+
+      // Анимация описания снизу
+      animateFromBottom(descriptionRef.value, {
+        duration: 1,
+        y: 30,
+        scrollTrigger: {
+          trigger: descriptionRef.value,
+          start: "top 85%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        }
+      })
+    })
+
+    return {
+      titleRef,
+      mapRef,
+      descriptionRef
+    }
+  }
 }
 </script>
 

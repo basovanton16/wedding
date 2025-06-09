@@ -10,6 +10,7 @@
     "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
+    "gsap": "^3.13.0",
     "vue": "^3.4.0"
   },
   "devDependencies": {
