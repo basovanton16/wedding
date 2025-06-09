@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="go__bg">
-      <img src="../assets/images/bg-2.jpsg" class="go__img">
+      <img src="../assets/images/bg-2.jpg" class="go__img">
     </div>
   </section>
 </template>
