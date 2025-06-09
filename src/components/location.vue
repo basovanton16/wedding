@@ -169,7 +169,7 @@ export default {
   transform: translateX(-50%);
   z-index: 1000;
   opacity: 0;
-  width: 90%;
+  width: fit-content;
   transition: all 0.3s ease;
   pointer-events: none;
 }
