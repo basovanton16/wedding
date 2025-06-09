@@ -2,15 +2,19 @@
   <section class="location">
     <div class="location__wrapper">
       <div class="location__title" ref="titleRef">
-        <img src="../assets/images/location-title.png" class="location__img">
+        <img src="../assets/images/location-title.png" class="location__img" />
       </div>
       <div class="location__map" ref="mapRef">
         <a href="https://yandex.ru/maps/-/CHSVjVJD" target="_blank">
-          <img src="../assets/images/map.png" class="location__img">
+          <img src="../assets/images/map.png" class="location__img" />
         </a>
       </div>
-      <div class="location__description" ref="descriptionRef" @click="copyAddress">
-        <img src="../assets/images/location-descr.png" class="location__img">
+      <div
+        class="location__description"
+        ref="descriptionRef"
+        @click="copyAddress"
+      >
+        <img src="../assets/images/location-descr.png" class="location__img" />
       </div>
     </div>
 
@@ -25,32 +29,38 @@
 </template>
 
 <script>
-import { ref, onMounted } from 'vue'
-import { useGSAPAnimations } from '../composables/useGSAPAnimations.js'
-import copy from 'copy-to-clipboard';
-
+import { ref, onMounted } from "vue";
+import { useGSAPAnimations } from "../composables/useGSAPAnimations.js";
+import copy from "copy-to-clipboard";
 
 export default {
-  name: 'Location',
+  name: "Location",
   setup() {
-    const titleRef = ref(null)
-    const mapRef = ref(null)
-    const descriptionRef = ref(null)
-    const showToast = ref(false)
+    const titleRef = ref(null);
+    const mapRef = ref(null);
+    const descriptionRef = ref(null);
+    const showToast = ref(false);
 
     const copyAddress = () => {
-      const address = 'Прудовый заезд 1А, село Верхнерусское, Шпаковский муниципальный округ, Ставропольский край'
-      const success = copy(address)
+      const address =
+      "Прудовый заезд 1А, село Верхнерусское, Шпаковский муниципальный округ, Ставропольский край";
+      const success = copy(address);
 
       if (success) {
-        showToast.value = true
+        showToast.value = true;
         setTimeout(() => {
-          showToast.value = false
-        }, 3000) // Скрываем через 3 секунды
+          showToast.value = false;
+        }, 3000); // Скрываем через 3 секунды
       }
-    }
+    };
 
-    const { animateFromBottom, animateScale, animateFromLeft, animateFromRight } = useGSAPAnimations()
+    const {
+      animateFromBottom,
+      animateScale,
+      animateFromLeft,
+      animateFromRight,
+      ScrollTrigger,
+    } = useGSAPAnimations();
 
     onMounted(() => {
       // Анимация заголовка снизу
@@ -61,9 +71,9 @@ export default {
           trigger: titleRef.value,
           start: "top 85%",
           end: "bottom 20%",
-          toggleActions: "play none none reverse"
-        }
-      })
+          toggleActions: "play none none reverse",
+        },
+      });
 
       // Анимация карты с масштабированием
       animateScale(mapRef.value, {
@@ -73,9 +83,9 @@ export default {
           trigger: mapRef.value,
           start: "top 85%",
           end: "bottom 20%",
-          toggleActions: "play none none reverse"
-        }
-      })
+          toggleActions: "play none none reverse",
+        },
+      });
 
       // Анимация описания снизу
       animateFromBottom(descriptionRef.value, {
@@ -85,30 +95,37 @@ export default {
           trigger: descriptionRef.value,
           start: "top 85%",
           end: "bottom 20%",
-          toggleActions: "play none none reverse"
-        }
-      })
-    })
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      // Отдельный ScrollTrigger для автокопирования
+      ScrollTrigger.create({
+        trigger: descriptionRef.value,
+        start: "top 50%", // Когда элемент в центре экрана
+        end: "bottom 50%",
+      });
+    });
 
     return {
       titleRef,
       mapRef,
       descriptionRef,
       copyAddress,
-      showToast
-    }
-  }
-}
+      showToast,
+    };
+  },
+};
 </script>
 
 <style scoped>
 .location {
-position: relative;
-padding: 40px 20px;
-width: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
+  position: relative;
+  padding: 40px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .location__wrapper {
@@ -183,7 +200,7 @@ align-items: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: bold;
 }
 
