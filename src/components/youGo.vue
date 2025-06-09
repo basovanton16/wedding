@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="go__bg" ref="bgRef">
-      <img src="../assets/images/bg-2.jpg" class="go__img">
+      <img src="../assets/images/bg-2.jpg" class="go__img go__img-bg">
     </div>
   </section>
 </template>
@@ -98,6 +98,7 @@ export default {
   position: relative;
   width: 100%;
   background: #AA4703;
+  overflow: hidden;
 }
 
 .go__wrapper {
@@ -152,4 +153,9 @@ export default {
       transform: scale(1);
     }
   }
+
+.go__img-bg {
+  position: relative;
+  bottom: -10px;
+}
 </style>
