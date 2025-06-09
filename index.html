@@ -17,6 +17,49 @@
     <meta name="description" content="Свадьба Антона и Виктории">
     <meta property="og:description" content="Свадьба Антона и Виктории">
     <meta name="twitter:description" content="Свадьба Антона и Виктории">
+
+    <script>
+        // Динамическое изменение мета-тегов на основе URL параметров
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const inviteType = urlParams.get('type') || 'standard';
+
+            // Варианты контента для мета-тегов
+            const metaContent = {
+                limited: {
+                    title: "Приглашение на свадьбу - только для вас",
+                    description: "Дорогие друзья и родные! Мы будем рады видеть вас на нашей свадьбе. В этот день мы хотим собрать самых близких нам людей, поэтому возможность пригласить гостей +1 не предусмотрена. Надеемся на ваше понимание и с нетерпением ждем встречи с вами!"
+                },
+                standard: {
+                    title: "Приглашение на свадьбу Антона и Виктории",
+                    description: "Дорогие друзья и родные! Этот день хотим разделить с самыми близкими людьми и будем рады видеть вас на нашей свадьбе."
+                }
+            };
+
+            const content = metaContent[inviteType] || metaContent.standard;
+console.log(1);
+
+            // Обновляем title
+            document.title = content.title;
+
+            // Обновляем мета-теги
+            const updateMetaTag = (selector, content) => {
+                const meta = document.querySelector(selector);
+                if (meta) {
+                    meta.setAttribute('content', content);
+                }
+            };
+
+            // Обновляем все варианты title
+            updateMetaTag('meta[property="og:title"]', content.title);
+            updateMetaTag('meta[name="twitter:title"]', content.title);
+
+            // Обновляем все варианты description
+            updateMetaTag('meta[name="description"]', content.description);
+            updateMetaTag('meta[property="og:description"]', content.description);
+            updateMetaTag('meta[name="twitter:description"]', content.description);
+        })();
+    </script>
 </head>
 <body>
     <div id="app"></div>
