@@ -58,10 +58,10 @@ export default {
       // Анимация заголовка
       animateFromBottom(titleRef.value, {
         duration: 1,
-        y: 140,
+        y: 90,
         scrollTrigger: {
           trigger: titleRef.value,
-          start: "top 85%",
+          start: "top 100%",
           end: "bottom 20%",
           toggleActions: "play none none reverse"
         }
@@ -70,10 +70,11 @@ export default {
       // Анимация подзаголовка
       animateFromBottom(subtitleRef.value, {
         duration: 0.8,
-        y: 130,
+        y: 120,
+        delay: 1.3,
         scrollTrigger: {
           trigger: subtitleRef.value,
-          start: "top 80%",
+          start: "top 100%",
           end: "bottom 20%",
           toggleActions: "play none none reverse"
         }

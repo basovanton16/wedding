@@ -20,7 +20,9 @@
         <img src="../assets/images/wishes-4.png" class="wishes__img" />
       </div>
       <div class="wishes__button" ref="buttonRef">
-        <img src="../assets/images/wishes-button.png" class="wishes__img" />
+        <a href="tel:+79187776620" class="wishes__button-link">
+          <img src="../assets/images/wishes-button.png" class="wishes__img" />
+        </a>
       </div>
     </div>
   </section>
@@ -182,4 +184,37 @@ export default {
   width: 100%;
   max-width: 335px;
 }
+
+.wishes__button-link {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  /* animation: pulse 2s infinite; */
+}
+
+/* .wishes__button-link:hover {
+  transform: scale(1.05);
+}
+
+.wishes__button-link:active {
+  transform: scale(0.95);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+} */
+
+  .wishes__button-link {
+    animation: pulse 1.5s infinite;
+  }
 </style>

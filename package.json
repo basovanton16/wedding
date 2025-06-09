@@ -10,6 +10,7 @@
     "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
+    "copy-to-clipboard": "^3.3.3",
     "gsap": "^3.13.0",
     "vue": "^3.4.0"
   },

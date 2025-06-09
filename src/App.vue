@@ -40,6 +40,8 @@ export default {
   align-items: center;
   background: #F1ECE6;
   width: 100%;
+  max-width: 100vw;
   height: 100%;
+  overflow-x: hidden;
 }
 </style>

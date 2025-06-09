@@ -8,7 +8,9 @@
         <img src="../assets/images/go-subtitle.png" class="go__img">
       </div>
       <div class="go__button" ref="buttonRef">
-        <img src="../assets/images/go-button.png" class="go__img">
+        <a href="tel:+79187776620">
+          <img src="../assets/images/go-button.png" class="go__img">
+        </a>
       </div>
     </div>
     <div class="go__bg" ref="bgRef">
@@ -122,5 +124,32 @@ export default {
 .go__button {
   margin-top: 32px;
   margin-bottom: 40px;
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  animation: pulse 2s infinite;
 }
+
+.go__button-link:hover {
+  transform: scale(1.05);
+}
+
+.go__button-link:active {
+  transform: scale(0.95);
+}
+
+/* Для мобильных устройств - более заметная пульсация */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 </style>

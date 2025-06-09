@@ -5,7 +5,9 @@
     <img src="../assets/images/date-of-wedd.png"  class="date__img">
   </div>
   <div class="date__convert" ref="convertRef">
-    <img src="../assets/images/convert.png"  class="date__img">
+    <img  src="../assets/images/convert-bg.png" ref="convertRef1" class="date__img date__convert-1">
+    <img src="../assets/images/convert-bg-2.png" ref="convertRef2" class="date__img date__convert-2">
+    <img src="../assets/images/convert-bg-3.png" ref="convertRef3" class="date__img date__convert-3">
   </div>
 </div>
   </section>
@@ -20,6 +22,9 @@ export default {
   setup() {
     const calendarRef = ref(null)
     const convertRef = ref(null)
+    const convertRef1 = ref(null)
+    const convertRef2 = ref(null)
+    const convertRef3 = ref(null)
 
     const { animateFromBottom, animateScale } = useGSAPAnimations()
 
@@ -48,11 +53,27 @@ export default {
           toggleActions: "play none none reverse"
         }
       })
+
+      // Анимация третьей карточки - плавно выезжает наверх на 50 пикселей
+      animateFromBottom(convertRef3.value, {
+        duration: 1,
+        y: 90,
+        // delay: 0.3,
+        scrollTrigger: {
+          trigger: convertRef.value,
+          start: "top 60%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        }
+      })
     })
 
     return {
       calendarRef,
-      convertRef
+      convertRef,
+      convertRef1,
+      convertRef2,
+      convertRef3
     }
   }
 }
@@ -80,8 +101,28 @@ flex-direction: column;
 }
 
 .date__convert {
+  position: relative;
   width: 100%;
+  height: 290px;
   max-width: 321px;
   margin-top: -57px;
+}
+
+.date__convert-1 {
+  position: absolute;
+  top: 0;
+}
+.date__convert-2 {
+  position: absolute;
+  top: 112px;
+  z-index: 3;
+}
+.date__convert-3 {
+  position: absolute;
+  top: 30px;
+  width: 281px;
+  left: 20px;
+  right: 20px;
+  margin: 0 auto;
 }
 </style>

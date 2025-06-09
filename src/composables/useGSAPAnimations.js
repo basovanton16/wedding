@@ -109,7 +109,7 @@ export function useGSAPAnimations() {
   // Функция для создания анимации появления слева
   const animateFromLeft = (selector, options = {}) => {
     const defaults = {
-      x: -50,
+      x: -30,
       opacity: 0,
       duration: 1,
       ease: "power2.out",
@@ -122,6 +122,11 @@ export function useGSAPAnimations() {
     }
 
     const config = { ...defaults, ...options }
+
+    // Устанавливаем overflow: hidden для родительского элемента
+    if (selector && selector.parentElement) {
+      gsap.set(selector.parentElement, { overflow: "hidden" })
+    }
 
     const animation = gsap.fromTo(selector,
       { x: config.x, opacity: config.opacity },
@@ -141,7 +146,7 @@ export function useGSAPAnimations() {
   // Функция для создания анимации появления справа
   const animateFromRight = (selector, options = {}) => {
     const defaults = {
-      x: 50,
+      x: 30,
       opacity: 0,
       duration: 1,
       ease: "power2.out",
@@ -154,6 +159,11 @@ export function useGSAPAnimations() {
     }
 
     const config = { ...defaults, ...options }
+
+    // Устанавливаем overflow: hidden для родительского элемента
+    if (selector && selector.parentElement) {
+      gsap.set(selector.parentElement, { overflow: "hidden" })
+    }
 
     const animation = gsap.fromTo(selector,
       { x: config.x, opacity: config.opacity },
