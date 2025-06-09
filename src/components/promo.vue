@@ -3,7 +3,7 @@
     <div class="promo__wrapper">
       <div class="promo__bg">
         <img src="../assets/images/titleName.png" class="promo__title-name" />
-        <img src="../assets/images/bg.jpeg" class="promo__img" />
+        <img src="../assets/images/bg.jpg" class="promo__img" />
       </div>
       <div class="promo__title">
         <img src="../assets/images/promo-title.png" class="promo__img" />
