@@ -191,10 +191,10 @@ export default {
   text-decoration: none;
   cursor: pointer;
   transition: transform 0.3s ease;
-  /* animation: pulse 2s infinite; */
+animation: pulse 2s infinite;
 }
 
-/* .wishes__button-link:hover {
+.wishes__button-link:hover {
   transform: scale(1.05);
 }
 
@@ -212,7 +212,7 @@ export default {
   100% {
     transform: scale(1);
   }
-} */
+}
 
   .wishes__button-link {
     animation: pulse 1.5s infinite;
