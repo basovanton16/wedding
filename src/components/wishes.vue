@@ -1,7 +1,7 @@
 <template>
   <section class="wishes">
     <div class="wishes__bg" ref="bgRef">
-      <img src="../assets/images/flower.png" class="wishes__img" />
+      <img src="../assets/images/we.jpg" class="wishes__img" />
     </div>
     <div class="wishes__wrapper">
       <div class="wishes__title" ref="titleRef">
@@ -20,7 +20,7 @@
         <img src="../assets/images/wishes-4.png" class="wishes__img" />
       </div>
       <div class="wishes__button" ref="buttonRef">
-        <a href="tel:+79187776620" class="wishes__button-link">
+        <a href="https://platiqr.ru/?uuid=2000022087" target="_blank" class="wishes__button-link">
           <img src="../assets/images/wishes-button.png" class="wishes__img" />
         </a>
       </div>
